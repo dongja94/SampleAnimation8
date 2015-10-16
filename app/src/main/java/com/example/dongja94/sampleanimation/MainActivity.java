@@ -9,12 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView imageView;
+    ImageView imageView, animationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,16 +50,71 @@ public class MainActivity extends AppCompatActivity {
                 stopAnimation();
             }
         });
+
+        animationView = (ImageView)findViewById(R.id.imageView2);
+        btn = (Button)findViewById(R.id.btn_move);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.translate);
+                animationView.startAnimation(anim);
+            }
+        });
+
+        btn = (Button)findViewById(R.id.btn_rotate);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.rotate);
+                animationView.startAnimation(anim);
+            }
+        });
+
+        btn = (Button)findViewById(R.id.btn_scale);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.scale);
+                animationView.startAnimation(anim);
+            }
+        });
+
+        btn = (Button)findViewById(R.id.btn_alpha);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.alpha);
+                animationView.startAnimation(anim);
+            }
+        });
+
+        btn = (Button)findViewById(R.id.btn_set1);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.set1);
+                animationView.startAnimation(anim);
+            }
+        });
+
+        btn = (Button)findViewById(R.id.btn_set2);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.set2);
+                animationView.startAnimation(anim);
+            }
+        });
     }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            startAnimation();
-        } else {
-            stopAnimation();
-        }
+//        if (hasFocus) {
+//            startAnimation();
+//        } else {
+//            stopAnimation();
+//        }
     }
 
     private void startAnimation() {

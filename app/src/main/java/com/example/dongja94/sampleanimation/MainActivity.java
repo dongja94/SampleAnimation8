@@ -105,6 +105,63 @@ public class MainActivity extends AppCompatActivity {
                 animationView.startAnimation(anim);
             }
         });
+
+        btn = (Button)findViewById(R.id.btn_out);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.left_out);
+                anim.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        animationView.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+                animationView.startAnimation(anim);
+            }
+        });
+
+        btn = (Button)findViewById(R.id.btn_in);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animationView.setVisibility(View.VISIBLE);
+                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.left_in);
+                animationView.startAnimation(anim);
+            }
+        });
+
+        btn = (Button)findViewById(R.id.btn_custom);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.left_in);
+                MyAnimation anim = new MyAnimation();
+                anim.setDuration(1000);
+                animationView.startAnimation(anim);
+            }
+        });
+
+        btn = (Button)findViewById(R.id.btn_3d);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.left_in);
+                My3DAnimation anim = new My3DAnimation();
+                anim.setDuration(1000);
+                animationView.startAnimation(anim);
+            }
+        });
     }
 
     @Override

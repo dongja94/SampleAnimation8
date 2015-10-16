@@ -7,7 +7,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_main" tools:context=".MainActivity">
+    tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -38,20 +38,13 @@
         android:layout_alignLeft="@+id/btn_start"
         android:layout_alignStart="@+id/btn_start" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:layout_below="@+id/imageView"
-        android:src="@drawable/beach" />
-
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="T"
         android:id="@+id/btn_move"
-        android:layout_below="@+id/imageView2"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -61,7 +54,7 @@
         android:layout_height="wrap_content"
         android:text="R"
         android:id="@+id/btn_rotate"
-        android:layout_below="@+id/imageView2"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/btn_move"
         android:layout_toEndOf="@+id/btn_move" />
 
@@ -81,7 +74,7 @@
         android:layout_height="wrap_content"
         android:text="A"
         android:id="@+id/btn_alpha"
-        android:layout_below="@+id/imageView2"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/btn_scale"
         android:layout_toEndOf="@+id/btn_scale" />
 
@@ -91,7 +84,7 @@
         android:layout_height="wrap_content"
         android:text="C1"
         android:id="@+id/btn_set1"
-        android:layout_below="@+id/imageView2"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/btn_alpha"
         android:layout_toEndOf="@+id/btn_alpha" />
 
@@ -101,7 +94,62 @@
         android:layout_height="wrap_content"
         android:text="C2"
         android:id="@+id/btn_set2"
-        android:layout_below="@+id/imageView2"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/btn_set1"
         android:layout_toEndOf="@+id/btn_set1" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="O"
+        android:id="@+id/btn_out"
+        android:layout_above="@+id/btn_move"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I"
+        android:id="@+id/btn_in"
+        android:layout_alignTop="@+id/btn_out"
+        android:layout_toRightOf="@+id/btn_move"
+        android:layout_toEndOf="@+id/btn_move" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:id="@+id/btn_custom"
+        android:layout_above="@+id/btn_scale"
+        android:layout_alignLeft="@+id/btn_scale"
+        android:layout_alignStart="@+id/btn_scale" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:layout_below="@+id/imageView"
+            android:src="@drawable/beach" />
+    </FrameLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3D"
+        android:id="@+id/btn_3d"
+        android:layout_above="@+id/btn_scale"
+        android:layout_toRightOf="@+id/btn_scale"
+        android:layout_toEndOf="@+id/btn_scale" />
 </RelativeLayout>
